@@ -9,6 +9,9 @@ function ReInterval (callback, interval, args) {
   this._interval = setInterval(callback, interval, this._args);
 
   this.reschedule = function (interval) {
+    // if no interval entered, use the interval passed in on creation
+    if (!interval)
+      interval = this._interval;
 
     var now = Date.now();
     if (self._interval)
