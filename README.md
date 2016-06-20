@@ -52,9 +52,16 @@ arguments:
 interval.clear()
 ```
 
-This function clears the interval.
+This function clears the interval. Can be used to temporarily clear the `interval`, which can be rescheduled at a later time.
 
-Note: This will also clear the `callback` and `params` passed to reInterval, so calling this essentially just makes this object ready for overwriting with a new `interval` object. Please ensure this function is called before overwriting the object, because the interval can continue to run in the background unless cleared.
+```javascript
+interval.destroy()
+```
+
+This function clears the interval, and will also clear the `callback` and `params` passed to reInterval, so calling this essentially just makes this object ready for overwriting with a new `interval` object. 
+
+#### Note:
+Please ensure that either the `interval.clear()` or `interval.destroy()` function is called before overwriting the `interval` object, because the internal `interval` can continue to run in the background unless cleared.
 
 ## license
 
