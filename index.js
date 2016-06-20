@@ -13,7 +13,6 @@ function ReInterval (callback, interval, args) {
     if (!interval)
       interval = self._interval;
 
-    var now = Date.now();
     if (self._interval)
       clearInterval(self._interval);
     self._interval = setInterval(self._callback, interval, self._args);
